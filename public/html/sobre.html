@@ -1,0 +1,149 @@
+<!-- public/html/sobre.html -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChefMaster — Sobre Nós</title>
+  <meta name="description" content="Conheça mais sobre o ChefMaster — Plataforma de Cardápio Digital." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-logo">
+        <img src="/img/CHEF MASTER.png" alt="Logo ChefMaster">
+        <a class="brand" href="/html/index.html">ChefMaster <span class="brand-sub">Cardápio Digital</span></a>
+      </div>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navList">☰</button>
+        <ul id="navList" class="nav-list">
+          <li><a href="/html/index.html">Início</a></li>
+          <li><a href="/html/cardapio.html">Cardápio</a></li>
+          <li><a href="/html/sobre.html">Sobre Nós</a></li>
+          <li id="produto-link-item" style="display:none;"><a href="/html/produto.html">Gerenciar Produtos</a></li>
+          <li id="cozinheiro-link-item" style="display:none;"><a href="/html/cozinheiro.html">Painel do Cozinheiro</a></li>
+          <li id="user-area">
+            <a href="/html/cadastro.html" id="cadastro-link">Cadastre-se</a>
+            <a href="/html/login.html" id="login-link">Faça login</a>
+            <a href="/html/pedido.html">Faça seu pedido</a>
+            <span id="username-display" style="display:none;"></span>
+            <button id="logout-button" style="display:none;">Sair</button>
+            <a href="/html/conta.html" id="conta-link" class="btn" style="display:none;">Perfil</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Sobre o ChefMaster</h1>
+          <p class="lead">
+            A plataforma de cardápio digital que transforma a experiência do cliente
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="section container">
+      <div class="sobre-grid">
+        <div class="sobre-text">
+          <h2>Quem Somos</h2>
+          <p>
+            O <strong>ChefMaster</strong> é uma plataforma de <strong>cardápio digital</strong> desenvolvida
+            para modernizar o atendimento e oferecer uma experiência mais rápida, simples e organizada
+            tanto para clientes quanto para estabelecimentos.
+          </p>
+          <p>
+            Não somos um restaurante — somos uma solução tecnológica que funciona como um menu digital completo,
+            permitindo que negócios apresentem seus produtos com praticidade e atualização em tempo real.
+          </p>
+          <p>
+            Nosso foco é unir eficiência e usabilidade em uma interface intuitiva, ajudando clientes a fazer pedidos
+            com facilidade e estabelecimentos a melhorarem sua gestão.
+          </p>
+        </div>
+
+        <div class="sobre-img">
+          <img src="https://images.unsplash.com/photo-1556745753-b2904692b3cd?q=80&w=3000"
+            alt="Cardápio digital em dispositivo móvel">
+        </div>
+      </div>
+
+      <!-- Missão, Visão e Valores -->
+      <div class="valores-section">
+        <h2>Nossos Valores</h2>
+        <div class="valores-grid">
+          <div class="valor-card">
+            <h3>🎯 Missão</h3>
+            <p>
+              Modernizar o processo de consulta e realização de pedidos com uma interface simples,
+              bonita e eficiente.
+            </p>
+          </div>
+          <div class="valor-card">
+            <h3>🌟 Visão</h3>
+            <p>
+              Tornar-se a plataforma de cardápio digital mais prática e acessível, ajudando negócios
+              a oferecerem atendimento mais ágil e organizado.
+            </p>
+          </div>
+          <div class="valor-card">
+            <h3>❤️ Valores</h3>
+            <p>
+              Simplicidade, inovação, acessibilidade, eficiência e compromisso com uma ótima experiência
+              para todos os usuários.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contato -->
+      <div class="contato-section">
+        <h2>Contato</h2>
+        <div class="contato-grid">
+          <div class="contato-item">
+            <h3>📧 Suporte</h3>
+            <p>Email: suporte@chefmaster.com</p>
+          </div>
+          <div class="contato-item">
+            <h3>💬 Feedback</h3>
+            <p>Envie sugestões de melhorias diretamente pela plataforma.</p>
+          </div>
+          <div class="contato-item">
+            <h3>📱 Plataforma</h3>
+            <p>Compatível com navegadores modernos e dispositivos móveis.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> ChefMaster • Todos os direitos reservados</p>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

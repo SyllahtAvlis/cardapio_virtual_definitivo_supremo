@@ -1,0 +1,170 @@
+<!-- public/html/index.html - Página inicial do site ChefMaster
+Este é o arquivo HTML da página principal do cardápio digital.
+Ele contém o cabeçalho de navegação, seções de apresentação e links para outras páginas. -->
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <!-- Metadados da página: codificação, responsividade, título e descrição -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ChefMaster — Cardápio Digital</title>
+  <meta name="description" content="ChefMaster: plataforma moderna de cardápio digital para restaurantes e lanchonetes." />
+
+  <!-- Links para fontes externas do Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Link para o arquivo CSS de estilos da página -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <!-- Cabeçalho do site com logo e menu de navegação -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo e nome da marca -->
+      <div class="brand-logo">
+        <img src="/img/CHEF MASTER.png" alt="Logo ChefMaster">
+        <a class="brand" href="/html/index.html">ChefMaster <span class="brand-sub">Cardápio Digital</span></a>
+      </div>
+
+      <!-- Menu de navegação principal -->
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navList">☰</button>
+        <ul id="navList" class="nav-list">
+          <li><a href="/html/index.html">Início</a></li>
+          <li><a href="/html/cardapio.html">Cardápio</a></li>
+          <li><a href="/html/sobre.html">Sobre Nós</a></li>
+          <li id="produto-link-item" style="display:none;"><a href="/html/produto.html">Gerenciar Produtos</a></li>
+          <li id="cozinheiro-link-item" style="display:none;"><a href="/html/cozinheiro.html">Painel do Cozinheiro</a></li>
+          <li id="user-area">
+            <a href="/html/cadastro.html" id="cadastro-link">Cadastre-se</a>
+            <a href="/html/login.html" id="login-link">Faça login</a>
+            <a href="/html/pedido.html">Faça seu pedido</a>
+            <span id="username-display" style="display:none;"></span>
+            <button id="logout-button" style="display:none;">Sair</button>
+            <a href="/html/conta.html" id="conta-link" class="btn" style="display:none;">Perfil</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>O Cardápio Digital Feito Para Modernizar Seu Atendimento</h1>
+          <p class="lead">
+            Uma plataforma prática, rápida e intuitiva para facilitar pedidos e melhorar a experiência do cliente.
+          </p>
+          <p>
+            Seu cardápio atualizado em tempo real, organizado e acessível de qualquer dispositivo.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="/html/pedido.html">FAZER PEDIDO</a>
+            <a class="btn ghost" href="/html/cardapio.html">Explorar Cardápio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="section container">
+      <div class="section-header">
+        <h2>Sobre o ChefMaster</h2>
+        <p>Simplificando a forma de apresentar e gerenciar cardápios</p>
+      </div>
+
+      <div class="sobre-grid">
+        <div class="sobre-text">
+          <p>
+            O <strong>ChefMaster</strong> nasceu para transformar a experiência de consulta e pedido
+            em estabelecimentos de alimentação. Nada de cardápios desatualizados, confusos ou difíceis de navegar.
+          </p>
+          <p>
+            Somos uma plataforma digital onde o estabelecimento pode apresentar seus produtos de forma clara e organizada,
+            e onde o cliente navega com facilidade e realiza o pedido rapidamente.
+          </p>
+          <p>
+            Ideal para restaurantes, lanchonetes, cafeterias, hamburguerias e qualquer negócio que precisa de um cardápio moderno.
+          </p>
+        </div>
+
+        <div class="sobre-img">
+          <img
+            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmVzdGF1cmFudGV8ZW58MHx8MHx8fDA%3D"
+            alt="Mesa de restaurante">
+        </div>
+      </div>
+    </section>
+
+    <!-- Produtos em Destaque -->
+    <section class="section alt container">
+      <div class="section-header">
+        <h2>Destaques do Cardápio</h2>
+        <p>Produtos adicionados recentemente ou mais visualizados</p>
+      </div>
+      <div id="produtos-container" class="highlights-grid">
+        <!-- Produtos carregados via JS -->
+      </div>
+    </section>
+
+    <!-- Na Cozinha Section -->
+    <section id="cozinha" class="section container">
+      <div class="section-header">
+        <h2>Para Estabelecimentos</h2>
+        <p>Como ajudamos seu negócio a oferecer uma experiência melhor</p>
+      </div>
+
+      <div class="cozinha-grid">
+        <div class="cozinha-card">
+          <img src="https://bresca.es/wp-content/uploads/2024/03/tomates-y-queso-italianos.jpg"
+            alt="Gestão de produtos">
+          <h3>Gestão Fácil</h3>
+          <p>Atualize preços, fotos e descrições do seu cardápio em poucos cliques.</p>
+        </div>
+
+        <div class="cozinha-card">
+          <img src="https://compactaprint.com.br/wp-content/uploads/2024/07/Como-Lucrar-Cozinhando.jpg"
+            alt="Plataforma em ação">
+          <h3>Plataforma Intuitiva</h3>
+          <p>O cliente navega com facilidade e encontra o que deseja sem complicação.</p>
+        </div>
+
+        <div class="cozinha-card">
+          <img src="https://seucreditodigital.com.br/wp-content/uploads/2024/01/chef-de-cozinha-1229x720.jpg"
+            alt="Eficiência no atendimento">
+          <h3>Agilidade no Atendimento</h3>
+          <p>Reduza filas e esperas: pedidos são enviados digitalmente e sem erros.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> ChefMaster • Plataforma de Cardápio Digital</p>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <script src="../js/script.js"></script>
+
+</body>
+
+</html>

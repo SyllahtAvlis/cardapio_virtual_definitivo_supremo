@@ -1,0 +1,80 @@
+<!-- public/html/login.html -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../css/stylelogin.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-logo">
+        <img src="/img/CHEF MASTER.png" alt="Logo ChefMaster">
+        <a class="brand" href="/html/index.html">ChefMaster <span class="brand-sub">Cardápio Digital</span></a>
+      </div>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navList">☰</button>
+        <ul id="navList" class="nav-list">
+          <li><a href="/html/index.html">Início</a></li>
+          <li><a href="/html/cardapio.html">Cardápio</a></li>
+          <li><a href="/html/sobre.html">Sobre Nós</a></li>
+          <li id="user-area">
+            <a href="/html/cadastro.html" id="cadastro-link">Cadastre-se</a>
+            <a href="/html/login.html" id="login-link">Faça login</a>
+            <a href="/html/pedido.html">Faça seu pedido</a>
+            <span id="username-display" style="display:none;"></span>
+            <button id="logout-button" style="display:none;">Sair</button>
+            <a href="/html/conta.html" id="conta-link" class="btn" style="display:none;">Perfil</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="login-container">
+    <img src="/img/CHEF MASTER.png" alt="Logo" class="login-logo">
+    <h2>LOGIN</h2>
+
+    <form id="loginForm" novalidate autocomplete="off">
+      <div class="input-group">
+        <label for="username">Usuário</label>
+        <input type="text" id="username" placeholder="Digite seu usuário" autocomplete="off">
+      </div>
+
+      <div class="input-group">
+        <label for="password">Senha</label>
+        <input type="password" id="password" placeholder="Digite sua senha" autocomplete="new-password">
+      </div>
+
+      <button type="submit">Entrar</button>
+
+      <p class="cadastro-text">
+        Não tem uma conta?
+        <a href="/html/cadastro.html">Cadastre-se</a>
+      </p>
+
+      <p id="error" class="error"></p>
+    </form>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> ChefMaster • Todos os direitos reservados</p>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/login.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

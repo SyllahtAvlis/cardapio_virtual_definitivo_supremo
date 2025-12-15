@@ -1,0 +1,94 @@
+<!-- public/html/cardapio.html -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ChefMaster — Cardápio</title>
+  <meta name="description" content="Cardápio completo do restaurante ChefMaster — Shopping Bandeiras, Campinas." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/stylecardapio.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-logo">
+        <img src="/img/CHEF MASTER.png" alt="Logo ChefMaster">
+        <a class="brand" href="/html/index.html">ChefMaster <span class="brand-sub">Cardápio Digital</span></a>
+      </div>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navList">☰</button>
+        <ul id="navList" class="nav-list">
+          <li><a href="/html/index.html">Início</a></li>
+          <li><a href="/html/cardapio.html">Cardápio</a></li>
+          <li><a href="/html/sobre.html">Sobre Nós</a></li>
+          <li id="produto-link-item" style="display:none;"><a href="/html/produto.html">Gerenciar Produtos</a></li>
+          <li id="cozinheiro-link-item" style="display:none;"><a href="/html/cozinheiro.html">Painel do Cozinheiro</a></li>
+          <li id="user-area">
+            <a href="/html/cadastro.html" id="cadastro-link">Cadastre-se</a>
+            <a href="/html/login.html" id="login-link">Faça login</a>
+            <a href="/html/pedido.html">Faça seu pedido</a>
+            <span id="username-display" style="display:none;"></span>
+            <button id="logout-button" style="display:none;">Sair</button>
+            <a href="/html/conta.html" id="conta-link" class="btn" style="display:none;">Perfil</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Seção de pratos -->
+    <section id="menu" class="section container">
+      <div class="section-header">
+        <h1>Nosso Cardápio</h1>
+        <p>Pratos principais e acompanhamentos para todos os gostos.</p>
+      </div>
+
+      <div class="filters">
+        <button class="filter active" data-filter="all">Todos</button>
+        <button class="filter" data-filter="carnes">Carnes</button>
+        <button class="filter" data-filter="peixe">Peixe & Camarão</button>
+        <button class="filter" data-filter="frangos">Frangos</button>
+        <button class="filter" data-filter="porcao">Porções</button>
+        <button class="filter" data-filter="massas">Massas</button>
+      </div>
+
+      <div id="menuGrid" class="cards-grid large"></div>
+    </section>
+
+    <!-- Seção de bebidas -->
+    <section id="bebidas" class="section container">
+      <div class="section-header">
+        <h2>Bebidas Artesanais</h2>
+        <p>Sucos naturais, refrigerantes e outros refrescos.</p>
+      </div>
+
+      <div id="bebidasGrid" class="cards-grid small"></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> ChefMaster • Todos os direitos reservados</p>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/cardapio.js"></script>
+  <script src="../js/script.js"></script>
+
+</body>
+
+</html>

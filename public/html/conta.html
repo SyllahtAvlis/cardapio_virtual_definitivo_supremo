@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChefMaster — Minha Conta</title>
+  <meta name="description" content="Gerencie sua conta na plataforma ChefMaster — Cardápio Digital. Atualize seus dados de usuário com segurança." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/conta.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo e nome da marca -->
+      <div class="brand-logo">
+        <img src="/img/CHEF MASTER.png" alt="Logo ChefMaster">
+        <a class="brand" href="/html/index.html">ChefMaster <span class="brand-sub">Cardápio Digital</span></a>
+      </div>
+
+      <!-- Menu de navegação principal -->
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navList">☰</button>
+        <ul id="navList" class="nav-list">
+          <li><a href="/html/index.html">Início</a></li>
+          <li><a href="/html/cardapio.html">Cardápio</a></li>
+          <li><a href="/html/sobre.html">Sobre Nós</a></li>
+          <li id="produto-link-item" style="display:none;"><a href="/html/produto.html">Gerenciar Produtos</a></li>
+          <li id="cozinheiro-link-item" style="display:none;"><a href="/html/cozinheiro.html">Painel do Cozinheiro</a></li>
+          <li id="user-area">
+            <a href="/html/cadastro.html" id="cadastro-link">Cadastre-se</a>
+            <a href="/html/login.html" id="login-link">Faça login</a>
+            <a href="/html/pedido.html">Faça seu pedido</a>
+            <span id="username-display" style="display:none;"></span>
+            <button id="logout-button" style="display:none;">Sair</button>
+            <a href="/html/conta.html" id="conta-link" class="btn" style="display:none;">Perfil</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1>Gerencie sua Conta</h1>
+          <p>Atualize seus dados pessoais e mantenha sua conta segura.</p>
+        </div>
+
+        <div class="hero-actions">
+          <form id="accountForm">
+            <label for="username">Nome de usuário</label>
+            <input type="text" id="username" name="username" placeholder="Seu nome completo" required />
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+
+            <label for="senhaAtual">Senha atual</label>
+            <input type="password" id="senhaAtual" name="senhaAtual" placeholder="Digite sua senha atual" required />
+
+            <label for="novaSenha">Nova senha</label>
+            <input type="password" id="novaSenha" name="novaSenha" placeholder="Nova senha (opcional)" />
+
+            <label for="confirmarNovaSenha">Confirmar nova senha</label>
+            <input type="password" id="confirmarNovaSenha" name="confirmarNovaSenha"
+              placeholder="Confirme a nova senha" />
+
+            <button type="submit" class="btn primary">Atualizar</button>
+            <p id="error" class="error-message"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Exclusão de Conta -->
+    <section class="danger-zone">
+      <div class="container">
+        <div class="danger-content">
+          <div class="danger-info">
+            <h2>Zona de Perigo</h2>
+            <p class="warning-text">⚠️ Excluir sua conta é uma ação permanente e irreversível.</p>
+            <p>
+              Ao excluir sua conta, todas as suas informações cadastradas e seu histórico de pedidos serão removidos
+              permanentemente da plataforma.
+            </p>
+          </div>
+
+          <button id="deleteAccountBtn" class="btn danger">Excluir Minha Conta</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal de Confirmação de Exclusão -->
+    <div id="deleteModal" class="modal hidden">
+      <div class="modal-overlay" id="modalOverlay"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Confirmar Exclusão</h3>
+          <button id="closeModal" class="close-btn">✕</button>
+        </div>
+
+        <div class="modal-body">
+          <p class="modal-warning">⚠️ <strong>Atenção:</strong> esta ação não poderá ser desfeita.</p>
+          <p>Se você prosseguir, serão removidos:</p>
+
+          <ul class="delete-list">
+            <li>✗ Informações do perfil</li>
+            <li>✗ Histórico de pedidos</li>
+            <li>✗ Dados associados à sua conta</li>
+          </ul>
+
+          <p>Digite sua senha para confirmar:</p>
+          <input type="password" id="deletePassword" placeholder="Digite sua senha" />
+        </div>
+
+        <div class="modal-footer">
+          <button id="cancelDelete" class="btn secondary">Cancelar</button>
+          <button id="confirmDelete" class="btn danger">Sim, excluir</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> ChefMaster • Plataforma de Cardápio Digital</p>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/conta.js"></script>
+</body>
+
+</html>

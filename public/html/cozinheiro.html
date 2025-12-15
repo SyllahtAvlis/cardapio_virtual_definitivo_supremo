@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChefMaster — Painel do Cozinheiro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/cozinheiro.css">
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <button id="menu-close"></button>
+    <h2 class="logo">Chef Master</h2>
+    <nav>
+      <button class="menu-btn pedidos">Pedidos</button>
+      <button class="menu-btn sair">Sair</button>
+    </nav>
+  </div>
+
+  <!-- OVERLAY -->
+  <div id="overlay"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <!-- Logo e nome da marca -->
+      <div class="brand-logo">
+        <img src="/img/CHEF MASTER.png" alt="Logo ChefMaster">
+        <a class="brand" href="/html/index.html">ChefMaster <span class="brand-sub">Cardápio Digital</span></a>
+      </div>
+
+      <!-- Menu de navegação principal -->
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navList">☰</button>
+        <ul id="navList" class="nav-list">
+          <li><a href="/html/index.html">Início</a></li>
+          <li><a href="/html/cardapio.html">Cardápio</a></li>
+          <li><a href="/html/sobre.html">Sobre Nós</a></li>
+          <li id="produto-link-item" style="display:none;"><a href="/html/produto.html">Gerenciar Produtos</a></li>
+          <li id="cozinheiro-link-item" style="display:none;"><a href="/html/cozinheiro.html">Painel do Cozinheiro</a></li>
+          <li id="user-area">
+            <a href="/html/cadastro.html" id="cadastro-link">Cadastre-se</a>
+            <a href="/html/login.html" id="login-link">Faça login</a>
+            <a href="/html/pedido.html">Faça seu pedido</a>
+            <span id="username-display" style="display:none;"></span>
+            <button id="logout-button" style="display:none;">Sair</button>
+            <a href="/html/conta.html" id="conta-link" class="btn" style="display:none;">Perfil</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- FILTROS E CONTROLES -->
+  <div class="header-wrapper">
+    <div class="header">
+      <div class="dropdown-wrapper">
+        <button class="dropdown-btn" id="dropdown-mesas">Mesas</button>
+        <div class="dropdown-content" id="dropdown-mesas-content">
+          <!-- Mesas serão adicionadas automaticamente pelo JS -->
+        </div>
+      </div>
+      <button class="status-btn aguardando active" data-status="Aguardando">Aguardando</button>
+      <button class="status-btn preparo" data-status="Em preparo">Em preparo</button>
+      <button class="status-btn finalizados" data-status="Pronto">Prontos</button>
+      <button class="status-btn entregues" data-status="Entregue">Entregues</button>
+      <button class="status-btn todos" data-status="Todos">Todos</button>
+      <div class="dropdown-wrapper">
+        <button class="dropdown-btn" id="dropdown-prioridade">Prioridades</button>
+        <div class="dropdown-content" id="dropdown-prioridade-content">
+          <button>Urgente</button>
+          <button>Normal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO -->
+  <div class="content">
+    <div class="pedidos-container" id="pedidos-container">
+      <div class="sem-pedidos">Nenhum pedido no momento</div>
+    </div>
+  </div>
+
+  <!-- Modal de Confirmação -->
+  <div id="modal-confirmacao" class="modal">
+    <div class="modal-content">
+      <p class="modal-text">Você tem certeza que deseja cancelar este pedido?</p>
+      <div class="modal-actions">
+        <button id="confirmar-cancelar" class="btn confirmar">Sim, cancelar</button>
+        <button id="fechar-modal" class="btn cancelar">Não, voltar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> ChefMaster • Plataforma de Cardápio Digital</p>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Atualizar ano no footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/cozinheiro.js"></script>
+  <script src="../js/protecao-admin.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!-- public/html/pedido.html -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho - Chef Master</title>
+  <link rel="stylesheet" href="../css/pedido.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-logo">
+        <img src="/img/CHEF MASTER.png" alt="Logo ChefMaster">
+        <a class="brand" href="/html/index.html">ChefMaster <span class="brand-sub">Cardápio Digital</span></a>
+      </div>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="navList">☰</button>
+        <ul id="navList" class="nav-list">
+          <li><a href="/html/index.html">Início</a></li>
+          <li><a href="/html/cardapio.html">Cardápio</a></li>
+          <li><a href="/html/sobre.html">Sobre Nós</a></li>
+          <li id="produto-link-item" style="display:none;"><a href="/html/produto.html">Gerenciar Produtos</a></li>
+          <li id="cozinheiro-link-item" style="display:none;"><a href="/html/cozinheiro.html">Painel do Cozinheiro</a></li>
+          <li id="user-area">
+            <a href="/html/cadastro.html" id="cadastro-link">Cadastre-se</a>
+            <a href="/html/login.html" id="login-link">Faça login</a>
+            <a href="/html/pedido.html">Faça seu pedido</a>
+            <span id="username-display" style="display:none;"></span>
+            <button id="logout-button" style="display:none;">Sair</button>
+            <a href="/html/conta.html" id="conta-link" class="btn" style="display:none;">Perfil</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- IMAGEM DE BACKGROUND ABAIXO DO HEADER -->
+  <div class="background-image"></div>
+
+  <!-- CONTEÚDO CENTRAL -->
+  <div class="cart-container">
+    <h1>Seu Pedido</h1>
+
+    <div id="cart-items"></div>
+
+    <!-- CAMPO PARA NÚMERO DE MESA -->
+    <div class="mesa-selection">
+      <h3>Número da Mesa</h3>
+      <select id="numeromesa" class="mesa-input">
+        <option value="">-- Selecione uma mesa --</option>
+        <option value="1">Mesa 1</option>
+        <option value="2">Mesa 2</option>
+        <option value="3">Mesa 3</option>
+        <option value="4">Mesa 4</option>
+        <option value="5">Mesa 5</option>
+        <option value="6">Mesa 6</option>
+        <option value="7">Mesa 7</option>
+        <option value="8">Mesa 8</option>
+        <option value="9">Mesa 9</option>
+        <option value="10">Mesa 10</option>
+      </select>
+    </div>
+
+    <!-- CAMPO PARA OBSERVAÇÕES -->
+    <div class="observacoes">
+      <h3>Observações sobre o pedido</h3>
+      <textarea id="observacoes" placeholder="Digite suas observações aqui..."></textarea>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn cancelar" onclick="cancelarPedido()">Cancelar</button>
+      <button class="btn pagar" id="abrirModal">Concluir pedido</button>
+      <button class="btn adicionar" onclick="window.location.href='/html/cardapio.html'">
+        Adicionar mais pedidos
+      </button>
+    </div>
+  </div>
+
+  <!-- MODAL DETALHADO -->
+  <div id="modalPagamento" class="modal">
+    <div class="modal-content">
+      <h2>Resumo do Pedido</h2>
+
+      <div id="modal-resume-itens">
+        <!-- Itens do pedido serão preenchidos aqui dinamicamente -->
+      </div>
+
+      <p><strong>Total: <span id="modal-total">R$ 0,00</span></strong></p>
+
+      <button class="btn fechar" id="fecharModal">Cancelar</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> ChefMaster • Todos os direitos reservados</p>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/pedido.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
